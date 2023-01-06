@@ -1,0 +1,96 @@
+<zk>
+    <window id="win_home" title="Register Entry" border="normal" width="100%"
+    apply="io.github.robson.controller.Controller">
+		 <vlayout width="100%" >
+			<vbox width="100%">
+				<grid width="100%">
+					<columns>
+						<column width="20%"/>
+						<column width="80%"/>
+					</columns>
+					<rows>
+						<row>
+							<label value="Action" style="color:blue"/>
+							<label value="Create" style="color:blue"/>
+						</row>
+						<row>
+							<label value="Nome"/>
+							<textbox id="NomeCon" width="40%"/>
+						</row>
+						<row>
+							<label value="Phone"/>
+							<textbox id="phoneCon" width="40%"/>
+						</row>
+						<row>
+							<label value="E-mail"/>
+							<textbox id="emailCon" width="40%"/>
+						</row>
+						<row>
+							<label value=" "/>
+							<button id="buttonSave" label="SAVE" width="40%" style="background-color:green"/>
+						</row>
+					</rows>
+				</grid>
+			</vbox>
+			 <vbox width="100%">
+				 <grid width="100%">
+
+					 <columns>
+						 <column width="20%"/>
+						 <column width="80%"/>
+					 </columns>
+					 <rows>
+						 <row>
+							 <label value="Action" style="color:red"/>
+							 <label value="Update - Delete" style="color:red"/>
+						 </row>
+						 <row>
+							 <label value="ID"/>
+							 <label id="IdEdit"  width="40%"/>
+						 </row>
+						 <row>
+							 <label value="Nome"/>
+							 <textbox id="NomeEdit" width="40%"/>
+						 </row>
+						 <row>
+							 <label value="Phone"/>
+							 <textbox id="phoneEdit" width="40%"/>
+						 </row>
+						 <row>
+							 <label value="E-mail"/>
+							 <textbox id="emailEdit" width="40%"/>
+						 </row>
+						 <row>
+							 <label value=""/>
+							 <button id="buttonEdit" label="EDIT"  width="40%" style="background-color:blue"/>
+						 </row>
+						 <row>
+							 <label value=""/>
+							 <button id="buttonRemove" label="REMOVE" width="40%" style="background-color:red"/>
+						 </row>
+						 <row>
+							 <label value=""/>
+							 <button id="buttonClear" label="CLEAR" width="40%" style="background-color:gray"/>
+						 </row>
+					 </rows>
+				 </grid>
+			 </vbox>
+		 </vlayout>
+        <listbox id="listBox" style="margin-top:10px" width="100%" emptyMessage="No items match your search!">
+            <listhead>
+                <listheader label="ID" width="10%" align="center"/>
+                <listheader label="Name" width="35%" align="center"/>
+                <listheader label="Phone" width="20%" align="center"/>
+                <listheader label="E-mail" width="35%" align="center"/>
+            </listhead>
+            <template  name="model">
+                <listitem>
+                    <listcell label="${each.id}" />
+                    <listcell label="${each.nome}"/>
+                    <listcell label="${each.fone}" />
+                    <listcell label="${each.email}" />
+                </listitem>
+            </template>
+        </listbox>
+    </window>
+</zk>
